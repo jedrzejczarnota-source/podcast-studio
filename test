@@ -1,0 +1,52 @@
+Neural Networks Fundamentals
+
+Learning Goals
+After this lesson, you will be able to:
+	•	Choose appropriate machine learning models (classification, regression, clustering) based on data characteristics and problem type
+	•	Select evaluation metrics (accuracy, precision, recall, F1, RMSE, MAE) appropriate for different ML tasks
+	•	Identify when to use distance-based, linear, tree-based, or specialty models based on data preprocessing requirements
+	•	Explain when deep learning is necessary vs. traditional ML approaches
+	•	Apply model selection criteria using the "Do you have a label?" and "Category or quantity?" framework
+Non-Generative AI in Practice
+While generative AI may be the more exciting technology, non-generative AI plays a crucial role in practical applications. Non-generative AI is easier to control, maintain, and predict, making it essential for production systems, and it can also be integrated with generative AI to enhance capabilities.
+Examples of Non-Generative AI Applications
+Non-generative AI has numerous practical applications across industries, including credit card fraud detection, customer churn prediction, disease diagnosis from medical records, loan approval prediction, sales and energy forecasting, weather prediction, customer segmentation, image compression, social network community detection, market basket analysis, facial recognition, medical image diagnosis, quality inspection in manufacturing, satellite image analysis, and energy load forecasting.
+Scikit Learn: Classic AI in Practice
+Scikit Learn is the primary tool for implementing classic AI solutions, focusing on two main components: data processing and model building. The framework provides a comprehensive set of tools for both supervised and unsupervised learning tasks.
+Model Building: Choosing the Right Model
+Model building is often the easier part of the AI workflow, but selecting the appropriate model requires understanding your data and objectives. All models learn a function f(x), but they do so in different ways depending on the algorithm.
+Key Decision Factors
+The two most important questions when choosing a model are: "Do you have a label?" and "Are you predicting a category or a quantity?" These questions determine whether you need supervised or unsupervised learning, and whether you're doing classification, regression, clustering, or dimensionality reduction.
+Supervised Learning
+Supervised learning requires labeled data and is used when you have known outcomes. If you're predicting a category, you use classification; if you're predicting a quantity, you use regression.
+Unsupervised Learning
+Unsupervised learning works with unlabeled data to discover patterns. If you're looking for categories in your data, you use clustering; otherwise, you use dimensionality reduction.
+Model Categories
+Distance/Math-Based Models
+Distance-based models make predictions based on similarity between data points, assuming that points close to each other are similar. These models include SVM, K-Nearest Neighbors, Neural Networks (MLP), and PLS, and they require careful preprocessing with everything on the same scale.
+Linear Models
+Linear models assume a linear relationship between data and prediction values (f(x) = ax + b). Examples include Linear Regression, Logistic Regression, Regularized Models, Poisson Regression, Multinomial Regression, GAMs, and Discriminant Analysis, which need preprocessing for multicollinearity and scale issues.
+Tree-Based Models
+Tree-based models split data using decision "cuts" and can handle almost any type of data you throw at them. Examples include Random Forest, Gradient Boosting, Decision Trees, BART, Bagged Trees, C5.0 Rules, and Cubist Rules, and they generally need minimal preprocessing as they're robust to scale and can handle raw data well.
+Specialty Models
+Specialty models don't fit neatly into other categories and include MARS, Bagged MARS, Naive Bayes, and RuleFit. Each has specific preprocessing requirements depending on the model type.
+Data Processing Requirements
+Data processing requirements vary significantly depending on the model type. Tree-based models generally need minimal preprocessing, while distance-based models require careful scaling, normalization, and other transformations to ensure all features are on the same scale.
+Model Evaluation Metrics
+Classification Metrics
+For classification tasks, the choice of metric depends on your specific needs: Accuracy works for balanced datasets, Precision when false positives are expensive, Recall when false negatives are expensive, F1 Score for balanced performance on imbalanced data, and AUC-ROC for comparing models or choosing thresholds. For multi-class problems, use Macro F1 when classes are equally important or Weighted F1 when accounting for class imbalance.
+Regression Metrics
+For regression tasks, RMSE is the default choice and penalizes large errors, MAE is robust to outliers, R² helps explain variance to stakeholders, and MAPE is useful for comparing across different scales. The choice depends on whether you have outliers and how important they are to your use case.
+Clustering Metrics
+For clustering, Silhouette Score provides a general quality check (aim for > 0.5), the Elbow Method helps choose the number of clusters, and ARI is used when you have true labels to compare against.
+Red Flags and Best Practices
+Watch out for red flags like 99% accuracy on imbalanced data (useless model), R² = 1.0 (likely overfitting), high precision with low recall (missing many cases), or RMSE much larger than MAE (significant outliers). Always use multiple metrics to get a complete picture of model performance.
+Deep Learning: Principles and Applications
+Why Deep Learning?
+Deep learning is essential when your data isn't in a table format. It excels at processing images, text, audio, and other unstructured data types that traditional machine learning models struggle with.
+Neural Network Fundamentals
+Neural networks are inspired by biological neurons and consist of interconnected nodes that process information. The network learns to approximate complex functions f(x) through layers of neurons, with each neuron performing weighted computations and applying activation functions.
+TensorFlow vs Hugging Face
+Both TensorFlow and Hugging Face are powerful tools, but they serve different purposes. TensorFlow is more appropriate for researchers and engineers who want to build models from scratch, while Hugging Face is better for those who want to use existing models or adapt pre-trained models to their specific use cases.
+Deep Learning Vocabulary
+Key terms in deep learning include: Epoch (one complete pass through all training data, like reading a textbook once), Batch (small groups of examples processed together, like one chapter at a time), and Learning Rate (the size of steps taken during optimization - too small means slow learning, too large means overcorrecting).
