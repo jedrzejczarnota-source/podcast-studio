@@ -27,9 +27,12 @@ def make_recap(file_path, voice_choice):
 
 # 4. Build the modern Blocks UI design
 with gr.Blocks(theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# 🎙️ Podcast Studio: Daily Lesson Recapper")
-    gr.Markdown("Upload a class transcript (.txt or .pdf) to instantly generate a 5-minute audio summary.")
-    
+    gr.Markdown("""
+    <div style="text-align: center;">
+        <h1>🎙️ Your Personal Podcast Maker</h1>
+        <p>Turn your ideas, notes, or documents into engaging podcasts using AI.</p>
+    </div>
+    """)
     with gr.Row():
         # Left Column: Inputs
         with gr.Column():
